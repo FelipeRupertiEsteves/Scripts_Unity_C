@@ -183,7 +183,7 @@ public class player : MonoBehaviour
 
         
 
-        if(moveInput > 0 || moveInput < 0 )
+        if(moveInput > 0 || moveInput < 0 ) // animação de movimento
         {
             anim.SetBool("isWalking", true);
             TurnCheck();
@@ -211,7 +211,7 @@ public class player : MonoBehaviour
     private void EstaCorrendo()
     {
         //no exato momento em que preciona o botão
-        if (UserInput.instance.controls.Jumping.Jump.WasPressedThisFrame())
+        if (UserInput.instance.controls.Running.Run.WasPressedThisFrame())
         {
             correndo = true;
             Debug.Log("---- Está Correndo 1 !");
