@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d60d0d8bf9fd70243ac6404729a8d218, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!58 &7062100521311448489
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,11 +139,14 @@ MonoBehaviour:
   laserDoInimigo: {fileID: 0}
   localDoDisparo: {fileID: 0}
   itemParaDropar: {fileID: 2616960422634703144, guid: 9e5d19e5fa6aa7e428f24e13e2a95d1a, type: 3}
-  velocidadeDoInimigo: 6
-  vidaMaximaDoinimigo: 1
+  efeitoDeExplosao: {fileID: 8119610466819564240, guid: 15ecf913676a99449b03f85d3998fead, type: 3}
+  velocidadeDoInimigo: 10
+  vidaMaximaDoinimigo: 2
   vidaAtualDoinimigo: 0
+  pontosParaDar: 5
+  chanceDeDrop: 25
   tempoMaximoEntreOsLasers: 0
   tempoAtualDosLasers: 0
-  pontosParaDar: 5
   inimigoAtirador: 0
-  chanceDeDrop: 15
+  inimigoAtivado: 0
+  danoDaNave: 5

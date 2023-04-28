@@ -81,8 +81,10 @@ public class VidaDoJogador : MonoBehaviour
             vidaAtualDoJogador -= danoParaReceber;
             barraDeVidaDoJogador.value = vidaAtualDoJogador;
 
-            if (vidaAtualDoJogador <= 0)
+            if (vidaAtualDoJogador <= 0)    // morreu
             {
+                FindAnyObjectByType<ControleDoJogador>().jogadorEstaVivo = false;
+                GameManager.instance.GameOver();
                 Debug.Log("Game Over.");
             }
         }

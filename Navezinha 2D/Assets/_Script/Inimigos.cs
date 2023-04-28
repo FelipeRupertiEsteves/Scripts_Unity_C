@@ -7,29 +7,26 @@ public class Inimigos : MonoBehaviour
 
     public GameObject laserDoInimigo;
     public Transform localDoDisparo;
-
     public GameObject itemParaDropar;
+    public GameObject efeitoDeExplosao;
 
     public float velocidadeDoInimigo;
-    
     public int vidaMaximaDoinimigo;
     public int vidaAtualDoinimigo;
+    public int pontosParaDar;
+    public int chanceDeDrop;
 
     public float tempoMaximoEntreOsLasers;
     public float tempoAtualDosLasers;
-
-    public int pontosParaDar;
-
+     
     public bool inimigoAtirador;
-
-    public int chanceDeDrop;
-
-
-    
+    public bool inimigoAtivado;
+    public int danoDaNave;
 
     // Start is called before the first frame update
     void Start()
     {
+        inimigoAtivado = false;
         vidaAtualDoinimigo = vidaMaximaDoinimigo;
     }
 
@@ -38,11 +35,16 @@ public class Inimigos : MonoBehaviour
     {
         MovimentarInimigo();
         
-        if (inimigoAtirador == true)
+        if (inimigoAtirador == true && inimigoAtivado == true)
         {
             AtirarLasers();
         }
         
+    }
+
+    public void AtivarInimigo()
+    {
+        inimigoAtivado = true;
     }
 
     private void MovimentarInimigo()
@@ -68,6 +70,8 @@ public class Inimigos : MonoBehaviour
         if(vidaAtualDoinimigo <= 0)
         {
             GameManager.instance.AumentarPontuacao(pontosParaDar);
+            Instantiate(efeitoDeExplosao, transform.position, transform.rotation);
+            EfeitosSonoros.instance.somDaExplosão.Play();
 
             int numeroAleatorio = Random.Range(0, 100);     
 
@@ -79,7 +83,16 @@ public class Inimigos : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<VidaDoJogador>().MachucarJogador(danoDaNave);
+            Instantiate(efeitoDeExplosao, transform.position, transform.rotation);
+            EfeitosSonoros.instance.somDaExplosão.Play();
+            Destroy(this.gameObject);
+        }
+    }
 
-   
 
 }

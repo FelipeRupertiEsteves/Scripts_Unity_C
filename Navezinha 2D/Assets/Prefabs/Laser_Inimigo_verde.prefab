@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8208778697718168084}
   - component: {fileID: 8208778697718168091}
   - component: {fileID: 8208778697718168090}
-  - component: {fileID: 4123429667859646718}
   - component: {fileID: 9161286393918598230}
+  - component: {fileID: 4123429667859646718}
   m_Layer: 0
   m_Name: Laser_Inimigo_verde
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8208778697718168089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.037264824, y: -0.03976076, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.640234, y: 1.3380979, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,6 +113,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5265817, y: 0.38851744}
   m_EdgeRadius: 0
+--- !u!114 &9161286393918598230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8208778697718168089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af355e8fb032544ab0adbae8795ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactoDoLaserDoInimigo: {fileID: 4880020327527252342, guid: 344d97a61511f994f8f32dcfe5e893a9, type: 3}
+  velocidadeDoLaser: 13
+  danoParaDar: 3
 --- !u!114 &4123429667859646718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,17 +141,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempoDeVida: 3
---- !u!114 &9161286393918598230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8208778697718168089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2af355e8fb032544ab0adbae8795ba8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadeDoLaser: 10
-  danoParaDar: 2

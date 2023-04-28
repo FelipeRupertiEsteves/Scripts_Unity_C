@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LaserDoInimigo : MonoBehaviour
 {
+    public GameObject impactoDoLaserDoInimigo;
 
     public float velocidadeDoLaser;
 
@@ -31,6 +32,9 @@ public class LaserDoInimigo : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) // compara se encostou no collider de tag "Player"
         {
             collision.gameObject.GetComponent<VidaDoJogador>().MachucarJogador(danoParaDar);
+
+            Instantiate(impactoDoLaserDoInimigo, transform.position ,transform.rotation );
+            
             Destroy(this.gameObject);
         }
     }

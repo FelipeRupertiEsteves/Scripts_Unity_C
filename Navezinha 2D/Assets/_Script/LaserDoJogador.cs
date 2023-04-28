@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaserDoJogador : MonoBehaviour
 {
-
+    public GameObject impactoDoLaserDoJogador; // variavel para incluir o Prefab de Efeito do impacto do laser do jogador
 
     public float velocidadeDoLaser;
 
@@ -34,6 +34,10 @@ public class LaserDoJogador : MonoBehaviour
         if (collision.gameObject.CompareTag("Inimigo"))
         {
             collision.gameObject.GetComponent<Inimigos>().MachucarInimigo(danoParaDar);
+
+            Instantiate(impactoDoLaserDoJogador, transform.position, transform.rotation);
+            EfeitosSonoros.instance.somDeImpacto.Play();
+
             Destroy(this.gameObject);
         }
     }
